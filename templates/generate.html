@@ -1,0 +1,22 @@
+{%extends "master_template.html"%}
+{% block msg_pane %}
+  {% if msg %}
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+    </div>
+  {% endif %}
+{% endblock %}
+{% block content %}
+<h1 class="display-4 text-center">Generate Test File</h1>
+<div class="row mx-auto" style="width: 400px;">
+  <div class="col">
+    <form action="\upload" method = "POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="FormControlFileSelect">Select XML exported from Doc 1</label>
+        <input type="file" class="form-control-file" id="FormControlFileSelect" name="file">
+        <input class="btn btn-outline-warning mt-3" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
